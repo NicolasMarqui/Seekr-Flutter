@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../widgets/selectCity.dart';
 import '../widgets/searchBox.dart';
 
 class HomePage extends StatelessWidget {
@@ -29,11 +30,16 @@ class HomePage extends StatelessWidget {
               )),
         ],
       ),
-
-      body: Column(
-        children: <Widget>[
-          SearchBox(),
-        ],
+      drawer: Drawer(
+        child: Text('This is a Drawer'),
+      ),
+      body: SingleChildScrollView(
+        child: Column(
+          children: <Widget>[
+            SearchBox(),
+            SelectCity(),
+          ],
+        ),
       ),
     );
   }
