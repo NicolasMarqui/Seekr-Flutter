@@ -1,11 +1,40 @@
 import 'package:flutter/material.dart';
 
-class HomePage extends StatelessWidget{
+import '../widgets/searchBox.dart';
+
+class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(child: Text("First Commit"),),
+      backgroundColor: Colors.white,
+      appBar: AppBar(
+        elevation: 0,
+        leading: Icon(Icons.menu),
+        title: Text(
+          "Seekr",
+          style: TextStyle(fontSize: 35, fontWeight: FontWeight.w400),
+        ),
+        centerTitle: true,
+        actions: <Widget>[
+          Container(
+              margin: EdgeInsets.only(top: 10, right: 10),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: CircleAvatar(
+                radius: 22,
+                backgroundImage: AssetImage(
+                  'assets/images/avatar.jpg',
+                ),
+              )),
+        ],
+      ),
+
+      body: Column(
+        children: <Widget>[
+          SearchBox(),
+        ],
+      ),
     );
   }
-
 }

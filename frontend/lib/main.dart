@@ -10,7 +10,12 @@ class StartApp extends StatelessWidget{
     return MaterialApp(
       title: "Seekr",
       home: HomePage(),
+      theme: ThemeData(
+        primaryColor: Colors.white,
+        fontFamily: 'Poppins',
+      ),
+      debugShowCheckedModeBanner: false,
     );
   }
 
-}
+} 
