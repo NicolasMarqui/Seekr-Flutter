@@ -1,16 +1,22 @@
 import 'package:flutter/material.dart';
 
+import '../widgets/newestJobs.dart';
 import '../widgets/selectCity.dart';
 import '../widgets/searchBox.dart';
 
 class HomePage extends StatelessWidget {
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
         elevation: 0,
-        leading: Icon(Icons.menu),
+        leading: Builder(
+            builder: (context) => IconButton(
+                  icon: new Icon(Icons.menu),
+                  onPressed: () => Scaffold.of(context).openDrawer(),
+                )),
         title: Text(
           "Seekr",
           style: TextStyle(fontSize: 35, fontWeight: FontWeight.w400),
@@ -38,6 +44,7 @@ class HomePage extends StatelessWidget {
           children: <Widget>[
             SearchBox(),
             SelectCity(),
+            RecentJobs(),
           ],
         ),
       ),
