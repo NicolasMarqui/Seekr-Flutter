@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../models/cities.dart';
+import '../styles/styles.dart';
 
 class SelectCity extends StatelessWidget {
   const SelectCity({Key key}) : super(key: key);
@@ -25,20 +26,26 @@ class SelectCity extends StatelessWidget {
                       children: <Widget>[
                         Text(
                           mainText,
-                          style: TextStyle(
-                              fontSize: 15, fontWeight: FontWeight.w400),
+                          style: AppStyles.title_1(),
                         ),
                         Text(
                           "City",
-                          style: TextStyle(
-                              fontSize: 15, fontWeight: FontWeight.bold),
+                          style: AppStyles.bold(),
                           textAlign: TextAlign.start,
                         )
                       ],
                     )),
                 Flexible(
                   flex: 1,
-                  child: Text("See all"),
+                  child: InkWell(
+                    onTap: (){
+                      print('All');
+                    },
+                    child: Text(
+                      "See all",
+                      style: AppStyles.linkText(),
+                    ),
+                  ),
                 ),
               ],
             ),
@@ -54,32 +61,37 @@ class SelectCity extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: <Widget>[
-                      Container(
-                        width: 145,
-                        height: double.infinity,
-                        child: Card(
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(15.0),
-                          ),
-                          child: Stack(
-                            children: <Widget>[
-                              Image.asset(
-                                cities[index].pathName,
-                                fit: BoxFit.cover,
-                                height: double.infinity,
-                                width: double.infinity,
-                              ),
-                              Container(
-                                color: Colors.black54,
-                              ),
-                              Container(
-                                alignment: Alignment.center,
-                                child: Text(
-                                  cities[index].name,
-                                  style: TextStyle(color: Colors.white),
+                      InkWell(
+                        onTap: () {
+                          print('Clicked');
+                        },
+                        child: Container(
+                          width: 145,
+                          height: double.infinity,
+                          child: Card(
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(15.0),
+                            ),
+                            child: Stack(
+                              children: <Widget>[
+                                Image.asset(
+                                  cities[index].pathName,
+                                  fit: BoxFit.cover,
+                                  height: double.infinity,
+                                  width: double.infinity,
                                 ),
-                              ),
-                            ],
+                                Container(
+                                  color: Colors.black45,
+                                ),
+                                Container(
+                                  alignment: Alignment.center,
+                                  child: Text(
+                                    cities[index].name,
+                                    style: AppStyles.boldWhite(),
+                                  ),
+                                ),
+                              ],
+                            ),
                           ),
                         ),
                       ),

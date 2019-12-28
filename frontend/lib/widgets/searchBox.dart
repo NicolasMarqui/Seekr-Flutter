@@ -55,6 +55,9 @@ class SearchBox extends StatelessWidget {
                             ),
                           ),
                         ),
+                        SizedBox(
+                          width: 20,
+                        ),
                         Container(
                           child: Flexible(
                             flex: 1,
