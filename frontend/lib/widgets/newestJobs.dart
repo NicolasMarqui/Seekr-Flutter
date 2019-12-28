@@ -36,12 +36,15 @@ class RecentJobs extends StatelessWidget {
     return Column(
       children: <Widget>[
         Padding(
-          padding: const EdgeInsets.only(top: 10, left: 20,right: 20),
+          padding: const EdgeInsets.only(top: 10, left: 20, right: 20),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
               Text('Recent Jobs', style: AppStyles.title_1()),
-              Text('See all', style: AppStyles.linkText(),)
+              Text(
+                'See all',
+                style: AppStyles.linkText(),
+              )
             ],
           ),
         ),
@@ -52,12 +55,14 @@ class RecentJobs extends StatelessWidget {
                 .map((j) => Container(
                       padding: EdgeInsets.symmetric(horizontal: 20),
                       height: 80,
+                      width: double.infinity,
                       child: Card(
                         elevation: 5,
                         child: Row(
                           children: <Widget>[
                             Flexible(
-                              flex: 1,
+                              flex: 2,
+                              fit: FlexFit.tight,
                               child: j.country == 'Australia'
                                   ? Padding(
                                       padding: const EdgeInsets.fromLTRB(
@@ -90,6 +95,7 @@ class RecentJobs extends StatelessWidget {
                             ),
                             Flexible(
                               flex: 3,
+                              fit: FlexFit.tight,
                               child: Column(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -106,13 +112,30 @@ class RecentJobs extends StatelessWidget {
                               ),
                             ),
                             Flexible(
-                              flex: 1,
-                              child: Column(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                crossAxisAlignment: CrossAxisAlignment.end,
-                                children: <Widget>[
-                                  Text(j.currency + j.salary.toString())
-                                ],
+                              flex: 3,
+                              fit: FlexFit.tight,
+                              child: Padding(
+                                padding: const EdgeInsets.only(right: 8),
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  crossAxisAlignment: CrossAxisAlignment.end,
+                                  children: <Widget>[
+                                    Text(
+                                      '${j.currency}${j.salary} ${j.isHour ? '/hr' : '/mo'}',
+                                      style: AppStyles.bold(),
+                                    ),
+                                    InkWell(
+                                      onTap: () {},
+                                      child: Padding(
+                                        padding: const EdgeInsets.only(top: 4),
+                                        child: Text(
+                                          'See More',
+                                          style: AppStyles.linkTextSmall(),
+                                        ),
+                                      ),
+                                    )
+                                  ],
+                                ),
                               ),
                             )
                           ],

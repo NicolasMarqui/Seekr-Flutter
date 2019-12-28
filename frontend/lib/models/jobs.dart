@@ -6,7 +6,7 @@ class Jobs{
   final String city;
   final String country;
   final double salary;
-  final bool isHour;
+  bool isHour;
   final String currency;
   final DateTime datePosted;
 

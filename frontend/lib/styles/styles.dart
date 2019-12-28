@@ -6,6 +6,12 @@ class AppStyles{
     fontSize: 15,
   );
 
+  static linkTextSmall() => TextStyle(
+    color: Colors.blue,
+    fontSize: 12,
+    height: 0.8,
+  );
+
   static title_1() => TextStyle(
     fontSize: 18,
     fontWeight: FontWeight.w400,
