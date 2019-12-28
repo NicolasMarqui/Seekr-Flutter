@@ -29,4 +29,10 @@ class AppStyles{
     height: 1.5,
     color: Colors.grey,
   );
+
+  static descLessHeight() => TextStyle(
+    fontSize: 12,
+    height: 0.8,
+    color: Colors.grey,
+  );
 }
