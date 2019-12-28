@@ -23,4 +23,10 @@ class AppStyles{
     height: 1.0,
     color: Colors.white,
   );
+
+  static desc() => TextStyle(
+    fontSize: 12,
+    height: 1.5,
+    color: Colors.grey,
+  );
 }

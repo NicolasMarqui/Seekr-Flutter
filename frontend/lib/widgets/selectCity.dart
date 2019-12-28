@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../pages/chooseCity.dart';
 import '../models/cities.dart';
 import '../styles/styles.dart';
 
@@ -38,8 +39,11 @@ class SelectCity extends StatelessWidget {
                 Flexible(
                   flex: 1,
                   child: InkWell(
-                    onTap: (){
-                      print('All');
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => ChooseCity()));
                     },
                     child: Text(
                       "See all",
