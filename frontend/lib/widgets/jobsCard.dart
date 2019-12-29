@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
+import '../pages/jobInfo.dart';
 import '../styles/styles.dart';
 
 class JobsCard extends StatelessWidget {
@@ -8,7 +9,7 @@ class JobsCard extends StatelessWidget {
 
   const JobsCard({Key key, this.jobs}) : super(key: key);
 
-  String getPostedDay(DateTime date){
+  String getPostedDay(DateTime date) {
     String formatedDate = DateFormat('dd').format(date);
 
     String todaysDate = DateFormat('dd').format(DateTime.now());
@@ -18,7 +19,6 @@ class JobsCard extends StatelessWidget {
     String result = '$days d ago';
 
     return result;
-
   }
 
   @override
@@ -45,7 +45,10 @@ class JobsCard extends StatelessWidget {
                           ),
                           Padding(
                             padding: const EdgeInsets.only(top: 2),
-                            child: Text(getPostedDay(j.datePosted) ,style: AppStyles.smallDate(),),
+                            child: Text(
+                              getPostedDay(j.datePosted),
+                              style: AppStyles.smallDate(),
+                            ),
                           ),
                           j.country == 'Australia'
                               ? Padding(
@@ -87,17 +90,28 @@ class JobsCard extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.center,
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: <Widget>[
-                            Text(j.title, style: AppStyles.title_1(), textAlign: TextAlign.start,overflow: TextOverflow.ellipsis,),
-                            Text(j.company, style: AppStyles.linkDescSmall(),),
+                            Text(
+                              j.title,
+                              style: AppStyles.title_1(),
+                              textAlign: TextAlign.start,
+                              overflow: TextOverflow.ellipsis,
+                            ),
+                            Text(
+                              j.company,
+                              style: AppStyles.linkDescSmall(),
+                            ),
                             Padding(
                               padding: const EdgeInsets.only(top: 16),
-                              child: Text(j.description,  style: AppStyles.linkDescSmall(),overflow: TextOverflow.ellipsis,),
+                              child: Text(
+                                j.description,
+                                style: AppStyles.linkDescSmall(),
+                                overflow: TextOverflow.ellipsis,
+                              ),
                             ),
                           ],
                         ),
                       ),
                     ),
-
                     Flexible(
                       flex: 1,
                       fit: FlexFit.tight,
@@ -105,10 +119,20 @@ class JobsCard extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.center,
                         crossAxisAlignment: CrossAxisAlignment.end,
                         children: <Widget>[
-                          Text('\$19/hr', style: AppStyles.bold(),),
+                          Text(
+                            '\$19/hr',
+                            style: AppStyles.bold(),
+                          ),
                           RaisedButton(
                             child: Text('More', style: TextStyle(fontSize: 14)),
-                            onPressed: (){},
+                            onPressed: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => JobInfo(
+                                            job: j,
+                                          )));
+                            },
                             color: Colors.blue,
                             textColor: Colors.white,
                           ),
