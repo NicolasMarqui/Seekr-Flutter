@@ -41,4 +41,15 @@ class AppStyles{
     height: 0.8,
     color: Colors.grey,
   );
+
+  static linkDescSmall() => TextStyle(
+    color: Colors.grey,
+    fontSize: 12,
+    height: 0.8,
+  );
+
+  static smallDate() => TextStyle(
+    color: Colors.grey,
+    fontSize: 10,
+  );
 }

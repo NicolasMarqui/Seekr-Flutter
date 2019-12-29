@@ -15,7 +15,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  int _page = 0;
+  int _page = 1;
 
   final _pages = [
     HomePageContent(),
