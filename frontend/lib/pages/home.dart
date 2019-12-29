@@ -1,9 +1,13 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 
+import '../widgets/drawer.dart';
 import '../widgets/newestJobs.dart';
 import '../widgets/selectCity.dart';
 import '../widgets/searchBox.dart';
+import '../pages/seeJobs.dart';
+import '../pages/chooseCity.dart';
+import '../pages/profile.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -11,6 +15,15 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  int _page = 0;
+
+  final _pages = [
+    HomePageContent(),
+    SeeJobs(),
+    ChooseCity(),
+    Profile(),
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -46,31 +59,56 @@ class _HomePageState extends State<HomePage> {
         ],
       ),
       drawer: Drawer(
-        child: Text('This is a Drawer'),
+        child: SideDrawer(),
       ),
-      body: SingleChildScrollView(
-        child: Column(
-          children: <Widget>[
-            // SearchBox(),
-            SelectCity(),
-            RecentJobs(),
-          ],
-        ),
-      ),
+      body: _pages[_page],
       bottomNavigationBar: CurvedNavigationBar(
         height: 50,
         backgroundColor: Colors.white,
         animationDuration: Duration(milliseconds: 400),
         color: Color(0xFF121212),
         items: <Widget>[
-          Icon(Icons.home, size: 26,color: Colors.white,),
-          Icon(Icons.flag, size: 26, color: Colors.white,),
-          Icon(Icons.location_city, size: 26, color: Colors.white,),
-          Icon(Icons.account_circle, size: 26, color: Colors.white,),
+          Icon(
+            Icons.home,
+            size: 26,
+            color: Colors.white,
+          ),
+          Icon(
+            Icons.flag,
+            size: 26,
+            color: Colors.white,
+          ),
+          Icon(
+            Icons.location_city,
+            size: 26,
+            color: Colors.white,
+          ),
+          Icon(
+            Icons.account_circle,
+            size: 26,
+            color: Colors.white,
+          ),
         ],
         onTap: (index) {
-          //Handle button tap
+          setState(() {
+            _page = index;
+          });
         },
+      ),
+    );
+  }
+}
+
+class HomePageContent extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return SingleChildScrollView(
+      child: Column(
+        children: <Widget>[
+          // SearchBox(),
+          SelectCity(),
+          RecentJobs(),
+        ],
       ),
     );
   }
