@@ -24,8 +24,9 @@ class ChooseCity extends StatelessWidget {
           child: Column(
         children: cities
             .map((c) => Container(
+              width: double.infinity,
               child: Card(
-                    child: Row(
+                    child: Column(
                       children: <Widget>[
                         Container(
                           width: 171,

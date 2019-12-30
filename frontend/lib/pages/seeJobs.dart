@@ -11,16 +11,12 @@ class SeeJobs extends StatelessWidget {
       length: 3,
       child: Scaffold(
         backgroundColor: Colors.white,
-        appBar: AppBar(
-          centerTitle: true,
-          title: Text('This will not be empty i promise u'),
-          bottom: TabBar(
+        appBar: TabBar(
             tabs: <Widget>[
               Text('All Jobs'),
               Text('Full Time'),
               Text('Part Time'),
             ],
-          ),
         ),
         body: TabBarView(
           children: <Widget>[

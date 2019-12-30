@@ -15,7 +15,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  int _page = 0;
+  int _page = 3;
 
   final _pages = [
     HomePageContent(),
@@ -60,17 +60,6 @@ class _HomePageState extends State<HomePage> {
                       builder: (context) => Search(),
                     ));
               }),
-          // Container(
-          //     margin: EdgeInsets.only(top: 10, right: 10),
-          //     decoration: BoxDecoration(
-          //       borderRadius: BorderRadius.circular(10),
-          //     ),
-          //     child: CircleAvatar(
-          //       radius: 22,
-          //       backgroundImage: AssetImage(
-          //         'assets/images/avatar.jpg',
-          //       ),
-          //     )),
         ],
       ),
       drawer: Drawer(
