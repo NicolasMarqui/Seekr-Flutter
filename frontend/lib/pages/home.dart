@@ -4,11 +4,10 @@ import 'package:flutter/material.dart';
 import '../widgets/drawer.dart';
 import '../widgets/newestJobs.dart';
 import '../widgets/selectCity.dart';
-import '../widgets/searchBox.dart';
 import '../pages/seeJobs.dart';
-import '../pages/chooseCity.dart';
 import '../pages/profile.dart';
 import '../pages/favorites.dart';
+import '../pages/search.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -36,16 +35,31 @@ class _HomePageState extends State<HomePage> {
                   icon: new Icon(Icons.menu),
                   onPressed: () => Scaffold.of(context).openDrawer(),
                 )),
-        title: Text(
-          "Seekr",
-          style: TextStyle(fontSize: 35, fontWeight: FontWeight.w400),
+        title: InkWell(
+          child: Text(
+            "Seekr",
+            style: TextStyle(fontSize: 35, fontWeight: FontWeight.w400),
+          ),
+          onTap: (){
+            setState(() {
+              _page = 0;
+            });
+          },
         ),
         centerTitle: true,
         actions: <Widget>[
-          Padding(
-            padding: const EdgeInsets.all(10.0),
-            child: Icon(Icons.search),
-          ),
+          InkWell(
+              child: Padding(
+                padding: const EdgeInsets.all(10.0),
+                child: Icon(Icons.search),
+              ),
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => Search(),
+                    ));
+              }),
           // Container(
           //     margin: EdgeInsets.only(top: 10, right: 10),
           //     decoration: BoxDecoration(
