@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../styles/styles.dart';
 import '../models/jobs.dart';
+import '../pages/jobInfo.dart';
 
 class RecentJobs extends StatelessWidget {
   const RecentJobs({Key key}) : super(key: key);
@@ -41,9 +42,11 @@ class RecentJobs extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
               Text('Recent Jobs', style: AppStyles.title_1()),
-              Text(
-                'See all',
-                style: AppStyles.linkText(),
+              FlatButton(
+                child: Text('See all',style: AppStyles.linkText(),),
+                onPressed: (){
+
+                },
               )
             ],
           ),
@@ -128,9 +131,11 @@ class RecentJobs extends StatelessWidget {
                                       onTap: () {},
                                       child: Padding(
                                         padding: const EdgeInsets.only(top: 4),
-                                        child: Text(
-                                          'See More',
-                                          style: AppStyles.linkTextSmall(),
+                                        child: InkWell(
+                                          child: Text('See More', style: AppStyles.linkTextSmall(),),
+                                          onTap: (){
+                                            Navigator.push(context, MaterialPageRoute(builder: (context) => JobInfo(job: j,)));
+                                          },
                                         ),
                                       ),
                                     )

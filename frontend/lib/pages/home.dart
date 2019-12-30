@@ -8,6 +8,7 @@ import '../widgets/searchBox.dart';
 import '../pages/seeJobs.dart';
 import '../pages/chooseCity.dart';
 import '../pages/profile.dart';
+import '../pages/favorites.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -20,7 +21,7 @@ class _HomePageState extends State<HomePage> {
   final _pages = [
     HomePageContent(),
     SeeJobs(),
-    ChooseCity(),
+    Favorite(),
     Profile(),
   ];
 
