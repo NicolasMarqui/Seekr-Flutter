@@ -1,4 +1,4 @@
-class Jobs{
+class Jobs {
   final int id;
   final String title;
   final String description;
@@ -10,14 +10,26 @@ class Jobs{
   final String currency;
   final DateTime datePosted;
 
-  Jobs({this.id, this.title, this.description, this.company, this.city, this.country, this.salary, this.isHour, this.datePosted, this.currency,});
+  Jobs({
+    this.id,
+    this.title,
+    this.description,
+    this.company,
+    this.city,
+    this.country,
+    this.salary,
+    this.isHour,
+    this.datePosted,
+    this.currency,
+  });
 }
 
 List<Jobs> jobs = [
   Jobs(
     id: 1,
     title: "Cleaner",
-    description: "Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido..",
+    description:
+        "Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido..",
     company: "Ireland Goods.Inc",
     city: "Sidney",
     country: "Australia",
@@ -29,7 +41,8 @@ List<Jobs> jobs = [
   Jobs(
     id: 2,
     title: "Kitchen Porter",
-    description: "Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido..",
+    description:
+        "Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido..",
     company: "Ireland Goods.Inc",
     city: "Dublin",
     country: "Ireland",
@@ -41,7 +54,8 @@ List<Jobs> jobs = [
   Jobs(
     id: 3,
     title: "Dish Washer",
-    description: "Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido..",
+    description:
+        "Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido..",
     company: "Ireland Goods.Inc",
     city: "Madrid",
     country: "Spain",
@@ -53,7 +67,8 @@ List<Jobs> jobs = [
   Jobs(
     id: 4,
     title: "Cleaner",
-    description: "Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido..",
+    description:
+        "Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido..",
     company: "Ireland Goods.Inc",
     city: "Sidney",
     country: "Australia",
