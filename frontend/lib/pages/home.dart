@@ -15,7 +15,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  int _page = 1;
+  int _page = 0;
 
   final _pages = [
     HomePageContent(),
@@ -79,7 +79,7 @@ class _HomePageState extends State<HomePage> {
             color: Colors.white,
           ),
           Icon(
-            Icons.location_city,
+            Icons.favorite,
             size: 26,
             color: Colors.white,
           ),

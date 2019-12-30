@@ -25,8 +25,9 @@ class JobsCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
         child: Column(
-      children: jobs
+        children: jobs
           .map((j) => Card(
+                elevation: 7,
                 child: Row(
                   children: <Widget>[
                     Flexible(
@@ -133,7 +134,7 @@ class JobsCard extends StatelessWidget {
                                             job: j,
                                           )));
                             },
-                            color: Colors.blue,
+                            color: Colors.blueAccent,
                             textColor: Colors.white,
                           ),
                         ],
