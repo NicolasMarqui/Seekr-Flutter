@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 import '../styles/styles.dart';
 import '../widgets/profileInfo.dart';
 import '../widgets/profileSkills.dart';
 import '../widgets/profileExp.dart';
 import '../widgets/profileHelp.dart';
+import '../models/users.dart';
 
 class Profile extends StatefulWidget {
   const Profile({Key key}) : super(key: key);
@@ -30,6 +32,10 @@ class _ProfileState extends State<Profile> with TickerProviderStateMixin {
       "Exp",
       "Help",
     ];
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.portraitUp,
+      DeviceOrientation.portraitDown,
+    ]);
     return Container(
       child: Column(
         children: <Widget>[
@@ -41,7 +47,7 @@ class _ProfileState extends State<Profile> with TickerProviderStateMixin {
                   radius: 20,
                   backgroundImage: AssetImage('assets/images/avatar.jpg'),
                 ),
-                Text('Nicolas Marqui', style: AppStyles.title_1()),
+                Text(user.name, style: AppStyles.title_1()),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
@@ -63,6 +69,7 @@ class _ProfileState extends State<Profile> with TickerProviderStateMixin {
             ),
           ),
           Flexible(
+            flex: 1,
             child: TabBar(
               controller: _tabController,
               tabs: options
@@ -72,12 +79,19 @@ class _ProfileState extends State<Profile> with TickerProviderStateMixin {
                   .toList(),
             ),
           ),
-          Expanded(
+          Flexible(
+            flex: 9,
+            fit: FlexFit.loose,
             child: TabBarView(
               controller: _tabController,
               children: <Widget>[
-                ProfileInfo(),
-                ProfileSkills(),
+                SingleChildScrollView(
+                    child: ProfileInfo(
+                  user: user,
+                )),
+                ProfileSkills(
+                  user: user,
+                ),
                 ProfileExperience(),
                 ProfileHelp(),
               ],
@@ -87,7 +101,4 @@ class _ProfileState extends State<Profile> with TickerProviderStateMixin {
       ),
     );
   }
-}
-
-class ProfileExp {
 }

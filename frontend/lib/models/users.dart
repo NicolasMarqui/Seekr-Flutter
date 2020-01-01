@@ -33,8 +33,7 @@ class Users {
 var user = Users(
     id: 1,
     name: "Nicolas Marqui",
-    info:
-        'Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI.',
+    info:'Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI.',
     email: 'nicolas.marqui@fatec.sp.gov.br',
     password: 'hallo',
     skills: [

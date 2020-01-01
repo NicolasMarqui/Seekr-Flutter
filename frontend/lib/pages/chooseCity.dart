@@ -8,8 +8,7 @@ class ChooseCity extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
-  final double screenWidth =  MediaQuery.of(context).size.width;
+    final double screenWidth = MediaQuery.of(context).size.width;
 
     return Scaffold(
       backgroundColor: Colors.white,
@@ -21,16 +20,19 @@ class ChooseCity extends StatelessWidget {
         elevation: 0,
       ),
       body: SingleChildScrollView(
-          child: Column(
-        children: cities
+          child: Row(
+          children: cities
             .map((c) => Container(
-              width: double.infinity,
-              child: Card(
+                  width: double.infinity,
+                  child: Card(
                     child: Column(
                       children: <Widget>[
                         Container(
                           width: 171,
-                          child: Image.asset(c.pathName, fit: BoxFit.cover,),
+                          child: Image.asset(
+                            c.pathName,
+                            fit: BoxFit.cover,
+                          ),
                         ),
                         Container(
                           width: screenWidth - 171,
@@ -41,12 +43,18 @@ class ChooseCity extends StatelessWidget {
                                 textAlign: TextAlign.start,
                                 style: AppStyles.title_1(),
                               ),
-                              Text(c.description, style: AppStyles.desc(),),
+                              Text(
+                                c.description,
+                                style: AppStyles.desc(),
+                              ),
                               FlatButton(
-                                onPressed: (){
+                                onPressed: () {
                                   print('See all jobs');
                                 },
-                                child: Text('See all job Offers', style: AppStyles.linkText(),),
+                                child: Text(
+                                  'See all job Offers',
+                                  style: AppStyles.linkText(),
+                                ),
                               )
                             ],
                           ),
@@ -54,7 +62,7 @@ class ChooseCity extends StatelessWidget {
                       ],
                     ),
                   ),
-            ))
+                ))
             .toList(),
       )),
     );
