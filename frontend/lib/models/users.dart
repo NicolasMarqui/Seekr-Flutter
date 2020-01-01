@@ -47,7 +47,14 @@ var user = Users(
           company: 'Jgwebcom',
           stillWorking: true,
           howLong: 8,
-          description: 'Noice!')
+          description: 'Noice!'),
+          Experience(
+          id: 2,
+          title: 'Web Design',
+          company: 'Jgwebcom',
+          stillWorking: true,
+          howLong: 5,
+          description: 'Noice!'),
     ],
     favorites: [
       Favorite(id: 1, job: jobs[0]),

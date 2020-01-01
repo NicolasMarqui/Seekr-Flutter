@@ -92,7 +92,7 @@ class _ProfileState extends State<Profile> with TickerProviderStateMixin {
                 ProfileSkills(
                   user: user,
                 ),
-                ProfileExperience(),
+                ProfileExperience(user: user,),
                 ProfileHelp(),
               ],
             ),
