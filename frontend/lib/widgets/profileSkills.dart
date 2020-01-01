@@ -12,12 +12,16 @@ class ProfileSkills extends StatelessWidget {
       child: Column(
         children: user.skills
             .map<Widget>((s) => Card(
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: <Widget>[
-                      Text(s.title),
-                      s.hasWorked ? Icon(Icons.check) : Icon(Icons.close),
-                    ],
+                  elevation: 7,
+                  child: Padding(
+                    padding: const EdgeInsets.all(5.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: <Widget>[
+                        Text(s.title),
+                        s.hasWorked ? Icon(Icons.check) : Icon(Icons.close),
+                      ],
+                    ),
                   ),
                 ))
             .toList(),

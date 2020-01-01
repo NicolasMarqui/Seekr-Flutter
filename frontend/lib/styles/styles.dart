@@ -17,6 +17,12 @@ class AppStyles{
     fontWeight: FontWeight.w400,
   );
 
+  static titleWhite() => TextStyle(
+    fontSize: 18,
+    fontWeight: FontWeight.w400,
+    color: Colors.white
+  );
+
   static bold() => TextStyle(
     fontSize: 18,
     fontWeight: FontWeight.bold,
