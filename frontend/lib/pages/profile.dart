@@ -21,7 +21,7 @@ class _ProfileState extends State<Profile> with TickerProviderStateMixin {
   @override
   void initState() {
     super.initState();
-    _tabController = TabController(vsync: this, length: 4);
+    _tabController = TabController(vsync: this, length: 3);
   }
 
   @override
@@ -29,8 +29,7 @@ class _ProfileState extends State<Profile> with TickerProviderStateMixin {
     final List<String> options = [
       "Info",
       "Skills",
-      "Exp",
-      "Help",
+      "Experience",
     ];
     SystemChrome.setPreferredOrientations([
       DeviceOrientation.portraitUp,
@@ -92,8 +91,9 @@ class _ProfileState extends State<Profile> with TickerProviderStateMixin {
                 ProfileSkills(
                   user: user,
                 ),
-                ProfileExperience(user: user,),
-                ProfileHelp(),
+                ProfileExperience(
+                  user: user,
+                ),
               ],
             ),
           ),

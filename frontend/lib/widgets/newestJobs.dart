@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:frontend/pages/home.dart';
 
 import '../styles/styles.dart';
 import '../models/jobs.dart';
@@ -47,7 +48,9 @@ class RecentJobs extends StatelessWidget {
                   'See all',
                   style: AppStyles.linkText(),
                 ),
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => HomePage(page: 1,)));
+                },
               )
             ],
           ),

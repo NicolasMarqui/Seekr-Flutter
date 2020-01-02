@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../pages/home.dart';
 import '../styles/styles.dart';
 
 class SideDrawer extends StatelessWidget {
@@ -48,6 +49,9 @@ class SideDrawer extends StatelessWidget {
                   'About Me',
                   style: AppStyles.titleWhite(),
                 ),
+                onTap: (){
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => HomePage(page: 3,)));
+                },
               ),
               ListTile(
                 leading: Icon(

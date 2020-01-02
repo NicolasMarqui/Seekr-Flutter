@@ -5,17 +5,25 @@ import '../widgets/drawer.dart';
 import '../widgets/newestJobs.dart';
 import '../widgets/selectCity.dart';
 import '../pages/seeJobs.dart';
-import '../pages/profile.dart';
+import '../pages/changeProfile.dart';
 import '../pages/favorites.dart';
 import '../pages/search.dart';
+import '../pages/profile.dart';
 
 class HomePage extends StatefulWidget {
+
+  final page;
+
+  const HomePage({Key key, this.page = 3}) : super(key: key);
+
   @override
-  _HomePageState createState() => _HomePageState();
+  _HomePageState createState() => _HomePageState(page: page);
 }
 
 class _HomePageState extends State<HomePage> {
-  int _page = 3;
+  int page;
+
+  _HomePageState({this.page = 3});
 
   final _pages = [
     HomePageContent(),
@@ -42,7 +50,7 @@ class _HomePageState extends State<HomePage> {
           ),
           onTap: (){
             setState(() {
-              _page = 0;
+              page = 0;
             });
           },
         ),
@@ -65,8 +73,15 @@ class _HomePageState extends State<HomePage> {
       drawer: Drawer(
         child: SideDrawer(),
       ),
-      body: _pages[_page],
+      floatingActionButton: page == 3 ? FloatingActionButton(
+        onPressed: (){
+          Navigator.push(context, MaterialPageRoute(builder: (context) => ChangeProfile()));
+        },
+        child: Icon(Icons.add),
+      ) : null,
+      body: _pages[page],
       bottomNavigationBar: CurvedNavigationBar(
+        index: page,
         height: 50,
         backgroundColor: Colors.white,
         animationDuration: Duration(milliseconds: 400),
@@ -95,7 +110,7 @@ class _HomePageState extends State<HomePage> {
         ],
         onTap: (index) {
           setState(() {
-            _page = index;
+            page = index;
           });
         },
       ),
