@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 
+import '../widgets/addProfileInfo.dart';
+
 class ChangeProfile extends StatelessWidget {
   const ChangeProfile({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-      initialIndex: 1,
+      initialIndex: 0,
       length: 2,
       child: Scaffold(
         backgroundColor: Colors.white,
@@ -34,7 +36,7 @@ class ChangeProfile extends StatelessWidget {
           ),
         ),
         body: TabBarView(
-          children: <Widget>[Text('My info'), Text('My account')],
+          children: <Widget>[AddProfileInfo(), Text('My account')],
         ),
       ),
     );
