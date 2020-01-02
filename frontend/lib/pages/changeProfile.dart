@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../widgets/addProfileInfo.dart';
+import '../widgets/changeProfileInfo.dart';
 
 class ChangeProfile extends StatelessWidget {
   const ChangeProfile({Key key}) : super(key: key);
@@ -15,12 +16,15 @@ class ChangeProfile extends StatelessWidget {
         appBar: AppBar(
           leading: IconButton(
             icon: Icon(Icons.arrow_back_ios),
-            onPressed: (){
+            onPressed: () {
               Navigator.pop(context);
             },
           ),
           actions: <Widget>[
-            Icon(Icons.info),
+            Padding(
+              padding: const EdgeInsets.only(right: 10),
+              child: Icon(Icons.info, size: 20,),
+            ),
           ],
           bottom: TabBar(
             tabs: <Widget>[
@@ -36,7 +40,10 @@ class ChangeProfile extends StatelessWidget {
           ),
         ),
         body: TabBarView(
-          children: <Widget>[AddProfileInfo(), Text('My account')],
+          children: <Widget>[
+            AddProfileInfo(),
+            ChangeProfileInfo(),
+          ],
         ),
       ),
     );
